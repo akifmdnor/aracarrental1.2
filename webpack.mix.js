@@ -11,7 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix//.js('resources/js/app.js', 'public/js')
+    .copy('resources/web/js/bootstrap.min.js', 'public/assets/js')
+    .copy('resources/web/js/jquery.min.js', 'public/assets/js')
+    .js('resources/web/js/app.js', 'public/assets/js')
+    .copy('resources/web/img', 'public/assets/img')
+    .copy('resources/web/css/bootstrap.min.css', 'public/assets/css')
+    .copy('resources/web/css/fonts/ionicons.min.css', 'public/assets/css/fonts')
+    .postCss('resources/web/css/date_picker.css', 'public/assets/css')
+    .postCss('resources/web/css/fonts.css', 'public/assets/css')
+    .postCss('resources/web/css/styles.css', 'public/assets/css')
+    .version();
