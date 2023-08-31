@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $branches = App\Models\Branch::get();
-    return view('web.index', compact('branches'));
+    return view('index', compact('branches'));
 });
 
